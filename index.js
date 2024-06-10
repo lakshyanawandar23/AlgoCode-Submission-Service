@@ -1,13 +1,15 @@
-const routes = require('./routes/index');
-
+const app=require('./app')
+const {PORT}=require('./config/serverconfig');
 const fastify=require('fastify')({logger:true});
+const  connecttodb=require('./config/dbconfig')
+fastify.register(app);
 
+fastify.listen({port:PORT},async (err)=>{
+    if(err){
 
-fastify.get('/',(req,res)=>{
-   res.send("hello");
-})
-
-fastify.register(routes,{ prefix: '/api' });
-fastify.listen({port:3000},(err)=>{
+        
+        console.log(err);
+    }
+    await connecttodb();
     console.log("server is up");
 })

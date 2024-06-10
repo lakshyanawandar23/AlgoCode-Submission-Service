@@ -1,8 +1,7 @@
-const fastify=require('fastify')({logger:true});
+const testcontroller = require('../../controllers');
 async function routes(fastify,opt){
-fastify.get('/ping',(req,res)=>{
-    res.send("pong");
-})
+fastify.get('/ping',testcontroller.ping);
+fastify.post('/submission',testcontroller.submission);
 }
 
 module.exports=routes;
