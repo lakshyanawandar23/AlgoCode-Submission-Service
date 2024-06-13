@@ -15,8 +15,8 @@ async function app(fastify, options) {
     //fastify.register(require('@fastify/cors'));
 
     
-    fastify.register(repositorieplugin); 
-    fastify.register(submissionServiceplugin);
+   await fastify.register(repositorieplugin); 
+   await  fastify.register(submissionServiceplugin);
 
 
     //fastify.register(connecttodb);

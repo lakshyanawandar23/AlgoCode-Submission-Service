@@ -17,7 +17,9 @@ const SubmissionModel=new Schema({
     required:[true,"Probelm id is required for submission"]
    },
    status:{
+    type:String,
     enum:["WA","MLE","TLE","Succes","Pending"],
+    default:"Pending",
    }
 
 })

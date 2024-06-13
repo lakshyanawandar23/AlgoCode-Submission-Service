@@ -8,7 +8,7 @@ class Submissionrepository {
     }
     async addsubmission (payload){
      const response=   await   this.Submission.create(payload);
-     return  "added sucessfully"
+     return   response;
     }
 }
 

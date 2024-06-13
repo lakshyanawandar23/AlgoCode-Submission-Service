@@ -12,8 +12,10 @@ async function submission(req,res){
     //console.log(req.body);
     const response =await this.submissionService.addsubmission(req.body);
     return res.status(200).send({
-        message:response,
-        data:req.body
+        message:"success",
+        data:response,
+        error:{},
+       sucess:true,
     });
 }
 

@@ -14,7 +14,10 @@ class submissionService{
         console.log(this)
         const submission=await this.submissionrepo.addsubmission(payload);
        const response=await  addJob(payload);
-            return  submission;
+            return  {
+                queueResponse:response,
+                submission:submission,
+            };
         };
     }
 
