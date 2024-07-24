@@ -1,10 +1,7 @@
 const {Schema, mongoose}=require('mongoose');
-
-
-
 const SubmissionModel=new Schema({
-    Userid :{
-        type:Number,
+    userId :{
+        type:String,
         required:[true,"User id is required for submission"]
     },
     code:{
@@ -12,14 +9,18 @@ const SubmissionModel=new Schema({
         required:[true,"Code is required for Submission"]
     },
     language:String,
-   probelmid:{
-    type:Number,
+   probelmId:{
+    type:String,
     required:[true,"Probelm id is required for submission"]
    },
    status:{
     type:String,
-    enum:["WA","MLE","TLE","Succes","Pending"],
+    enum:["WA","MLE","TLE","Success","Pending"],
     default:"Pending",
+   },
+   language:{
+    type:String,
+    require:[true,"cannot be empty"]
    }
 
 })

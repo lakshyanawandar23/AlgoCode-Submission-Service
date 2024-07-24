@@ -1,7 +1,6 @@
 const fastifyPlugin = require('fastify-plugin');
 const submissionServiceplugin = require('./service/submissionplugin');
 const routes=require('./routes');
-const connecttodb = require('./config/dbconfig');
 const repositorieplugin = require('./repository/repositorieplugin');
 
 /**
@@ -12,9 +11,9 @@ const repositorieplugin = require('./repository/repositorieplugin');
 
 //plugin will have fastify ,opt,done as argument 
 async function app(fastify, options) {
-    //fastify.register(require('@fastify/cors'));
+    fastify.register(require('@fastify/cors'));
 
-    
+  //  await fastify.register(require('@fastify/cors'));
    await fastify.register(repositorieplugin); 
    await  fastify.register(submissionServiceplugin);
 

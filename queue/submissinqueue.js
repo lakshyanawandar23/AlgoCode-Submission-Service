@@ -2,7 +2,7 @@ const {Queue}=require('bullmq');
 
 const  redisconnection=require('../config/redisconfig');
 
-const submissionqueue=new Queue('submissionQueue',{
+const submissionqueue =new Queue('submissionQueue',{
     connection:redisconnection
 })
 
